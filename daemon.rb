@@ -2,6 +2,7 @@ require 'bundler'
 require 'eventmachine'
 require 'em-http-request'
 require 'em-synchrony'
+require 'sinatra/synchrony'
 require 'twilio-rb'
 
 $stdout.sync = true

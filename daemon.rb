@@ -2,7 +2,6 @@ require 'bundler'
 require 'eventmachine'
 require 'em-http-request'
 require 'em-synchrony'
-require 'sinatra/synchrony'
 require 'twilio-rb'
 
 $stdout.sync = true
@@ -17,7 +16,7 @@ def send_sms body
     body: "#{Time.now}: #{body}"
 end
 
-EM.run do
+EM.synchrony do
   EM.add_periodic_timer(ENV['POLL_INTERVAL'].to_i) do
     puts 'checking...'
     req = EM::HttpRequest.new(ENV['SITE_URL']).get

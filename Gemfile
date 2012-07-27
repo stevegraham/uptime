@@ -1,3 +1,5 @@
+source :rubygems
+
 gem 'bundler'
 gem 'eventmachine'
 gem 'em-http-request'
